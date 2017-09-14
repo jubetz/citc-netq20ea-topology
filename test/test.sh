@@ -1,4 +1,4 @@
-sudo apt-get install -qy  python-dev libssl-dev  sshpass
+sudo apt-get install -qy  python-dev libssl-dev  sshpass build-essential libffi-dev
 sudo pip install setuptools --upgrade
 sudo pip install ansible --upgrade
 rm -rf ansible-push-keys
