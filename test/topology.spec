@@ -8,16 +8,8 @@ vm server01 ubuntu-16.04 2 4 4
 vm server02 ubuntu-16.04 2 4 4
 
 network oob-mgmt-server eth0 10.255.0.1 255.255.0.0 public
-service oob-mgmt-server ssh 10.255.0.1 22 TCP public
-service oob-mgmt-server http 10.255.0.1 80 TCP public
-service oob-mgmt-server https 10.255.0.1 443 TCP public
-service oob-mgmt-server http2 10.255.0.1 1337 TCP public
-service oob-mgmt-server grafana 10.255.0.1 3000 TCP public
-service oob-mgmt-server novnc 10.255.0.1 6080 TCP public
-service oob-mgmt-server netq 10.255.0.1 9000 TCP public
-service oob-mgmt-server mesos 10.255.0.1 5050 TCP public
-service oob-mgmt-server marathon 10.255.0.1 8080 TCP public
-service oob-mgmt-server mesosapp 10.255.0.1 8088 TCP public
+service oob-mgmt-server alltcp eth0 1-65535 TCP public
+service oob-mgmt-server alludp eth0 1-65535 UDP public
 
 network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
 network leaf01 eth0 192.168.0.11 255.255.0.0
