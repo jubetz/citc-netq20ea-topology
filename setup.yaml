@@ -1,0 +1,10 @@
+
+- hosts: switches
+  roles:
+  - switch-netq
+  become: true
+
+- hosts: servers
+  roles:
+  - server-netq
+  become: true
