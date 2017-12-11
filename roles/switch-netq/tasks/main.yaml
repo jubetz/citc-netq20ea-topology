@@ -20,7 +20,6 @@
     owner: root
     group: root
     mode: "u=rw,o=r,g=r"
-    become: yes
 - pause:
     seconds: 5
 - shell: netq config agent restart
