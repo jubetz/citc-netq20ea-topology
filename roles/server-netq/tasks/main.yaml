@@ -6,7 +6,10 @@
     repo: deb [arch=amd64] https://apps3.cumulusnetworks.com/repos/deb xenial netq-1.2
     filename: netq
     state: present
-
+- apt:
+    update_cache: yes
+    name: cumulus-netq
+    state: latest
 - name: Start NetQ and Connect to the NetQ Telemetry Server
   service:
     name: rsyslog
