@@ -1,17 +1,49 @@
 
 vm oob-mgmt-server netq-1.2.0 2 10 40
-vm leaf01 cumulus-vx-3.4.3 1 2 2
-vm leaf02 cumulus-vx-3.4.3 1 2 2
-vm leaf03 cumulus-vx-3.4.3 1 2 2
-vm leaf04 cumulus-vx-3.4.3 1 2 2
-vm spine01 cumulus-vx-3.4.3 1 2 2
-vm spine02 cumulus-vx-3.4.3 1 2 2
-vm server01 ubuntu-16.04 2 4 4
-vm server02 ubuntu-16.04 2 4 4
-vm server03 ubuntu-16.04 2 4 4
-vm server04 ubuntu-16.04 2 4 4
+vm kdc-n7k-1 cumulus-vx-3.4.3 1 2 2
+vm kdc-core-1 cumulus-vx-3.4.3 1 2 2
+vm kdc-mgmt-net-1 cumulus-vx-3.4.3 1 2 2
+vm libdcsl1 cumulus-vx-3.4.3 1 2 2
+vm ombdcsl1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R26DSLX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R09DSLX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R26DSPC1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R09DSPC1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R20DLFX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R20DLFX2 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R24DLFX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R24DLFX2 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R20DLFG1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT1R20DLFG1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R26MSPX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R09MSPX1 cumulus-vx-3.4.3 1 2 2
+vm SRDH4IT2R20MLFG1 cumulus-vx-3.4.3 1 2 2
 
-network oob-mgmt-server eth0 10.255.0.1 255.255.0.0 public
+"oob-mgmt-switch" [function="oob-switch" mgmt_ip="10.255.7.254"]
+ "oob-mgmt-server" [function="oob-server" mgmt_ip="10.255.7.1"]
+ "kdc-n7k-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ "kdc-core-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.233"]
+ "kdc-mgmt-net-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""] 
+ "libdcsl1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ "ombdcsl1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R26DSLX1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R09DSLX1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R26DSPC1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R09DSPC1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R20DLFX1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R20DLFX2" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R24DLFX1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R24DLFX2" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=]
+ ."SRDH4IT2R20DLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT1R20DLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R26MSPX1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R09MSPX1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+ ."SRDH4IT2R20MLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
+
+
+
+
+network oob-mgmt-server eth0 10.254.0.1 255.255.0.0 public
 service oob-mgmt-server ssh eth0 22 TCP public
 service oob-mgmt-server http eth0 80 TCP public
 service oob-mgmt-server https eth0 443 TCP public
@@ -23,17 +55,26 @@ service oob-mgmt-server mesos eth0 5050 TCP public
 service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 
-network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
-network leaf01 eth0 192.168.0.11 255.255.0.0
-network leaf02 eth0 192.168.0.12 255.255.0.0
-network leaf03 eth0 192.168.0.13 255.255.0.0
-network leaf04 eth0 192.168.0.14 255.255.0.0
-network spine01 eth0 192.168.0.21 255.255.0.0
-network spine02 eth0 192.168.0.22 255.255.0.0
-network server01 eth0 192.168.0.31 255.255.0.0
-network server02 eth0 192.168.0.32 255.255.0.0
-network server03 eth0 192.168.0.33 255.255.0.0
-network server04 eth0 192.168.0.34 255.255.0.0
+network oob-mgmt-server eth1 10.255.7.254 255.255.255.0
+network oob-mgmt-server eth1 10.255.7.1 255.255.255.0
+network kdc-n7k-1 eth0 10.255.7.231 255.255.255.0
+network kdc-core-1 eth0 10.255.7.233 255.255.255.0
+network kdc-mgmt-net-1 eth0 10.255.7.235 255.255.255.0
+network libdcsl1 eth0 10.255.7.252 255.255.255.0
+network ombdcsl1 eth0 10.255.7.253 255.255.255.0
+network SRDH4IT2R26DSLX1 eth0 10.255.7.13 255.255.255.0
+network SRDH4IT2R09DSLX1 eth0 10.255.7.14 255.255.255.0
+network SRDH4IT2R26DSPC1 eth0 10.255.7.11 255.255.255.0
+network SRDH4IT2R09DSPC1 eth0 10.255.7.12 255.255.255.0
+network SRDH4IT2R20DLFX1 eth0 10.255.7.21 255.255.255.0
+network SRDH4IT2R20DLFX2 eth0 10.255.7.22 255.255.255.0
+network SRDH4IT2R24DLFX1 eth0 10.255.7.23 255.255.255.0
+network SRDH4IT2R24DLFX2 eth0 10.255.7.24 255.255.255.0
+network SRDH4IT2R20DLFG1 eth0 10.255.7.51 255.255.255.0
+network SRDH4IT1R20DLFG1 eth0 10.255.7.58 255.255.255.0
+network SRDH4IT2R26MSPX1 eth0 10.255.7.201 255.255.255.0
+network SRDH4IT2R09MSPX1 eth0 10.255.7.202 255.255.255.0
+network SRDH4IT2R20MLFG1 eth0 10.255.7.102 255.255.255.0
 
 autoconfig oob-mgmt-server
 
