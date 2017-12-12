@@ -19,30 +19,6 @@ vm SRDH4IT2R26MSPX1 cumulus-vx-3.4.3 1 2 2
 vm SRDH4IT2R09MSPX1 cumulus-vx-3.4.3 1 2 2
 vm SRDH4IT2R20MLFG1 cumulus-vx-3.4.3 1 2 2
 
-"oob-mgmt-switch" [function="oob-switch" mgmt_ip="10.255.7.254"]
- "oob-mgmt-server" [function="oob-server" mgmt_ip="10.255.7.1"]
- "kdc-n7k-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- "kdc-core-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip="10.255.7.233"]
- "kdc-mgmt-net-1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""] 
- "libdcsl1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- "ombdcsl1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R26DSLX1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R09DSLX1" [function="exit" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R26DSPC1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R09DSPC1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R20DLFX1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R20DLFX2" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R24DLFX1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R24DLFX2" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=]
- ."SRDH4IT2R20DLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT1R20DLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R26MSPX1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R09MSPX1" [function="spine" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
- ."SRDH4IT2R20MLFG1" [function="leaf" os="CumulusCommunity/cumulus-vx" version="3.4.3" memory="768" config="./helper_scripts/extra_switch_config.sh" mgmt_ip=""]
-
-
-
-
 network oob-mgmt-server eth0 10.254.0.1 255.255.0.0 public
 service oob-mgmt-server ssh eth0 22 TCP public
 service oob-mgmt-server http eth0 80 TCP public
@@ -78,35 +54,47 @@ network SRDH4IT2R20MLFG1 eth0 10.255.7.102 255.255.255.0
 
 autoconfig oob-mgmt-server
 
- connect leaf01 swp51 spine01 swp1
- connect leaf02 swp51 spine01 swp2
- connect leaf03 swp51 spine01 swp3
- connect leaf04 swp51 spine01 swp4
- connect leaf01 swp52 spine02 swp1
- connect leaf02 swp52 spine02 swp2
- connect leaf03 swp52 spine02 swp3
- connect leaf04 swp52 spine02 swp4
- connect leaf01 swp49 leaf02 swp49
- connect leaf01 swp50 leaf02 swp50
- connect leaf03 swp49 leaf04 swp49
- connect leaf03 swp50 leaf04 swp50
- connect spine01 swp31 spine02 swp31
- connect spine01 swp32 spine02 swp32
- connect server01 eth1 leaf01 swp1
- connect server01 eth2 leaf02 swp1
- connect server02 eth1 leaf01 swp2
- connect server02 eth2 leaf02 swp2
- connect server03 eth1 leaf03 swp1
- connect server03 eth2 leaf04 swp1
- connect server04 eth1 leaf03 swp2
- connect server04 eth2 leaf04 swp2
- connect leaf01 swp44 oob-mgmt-server eth2
- connect leaf02 swp44 oob-mgmt-server eth3
- connect leaf01 swp45 leaf01 swp46
- connect leaf01 swp47 leaf01 swp48
- connect leaf02 swp45 leaf02 swp46
- connect leaf02 swp47 leaf02 swp48
- connect leaf03 swp45 leaf03 swp46
- connect leaf03 swp47 leaf03 swp48
- connect leaf04 swp45 leaf04 swp46
- connect leaf04 swp47 leaf04 swp48
+
+connect libdcsl1 swp47 ombdcsl1 swp47
+connect libdcsl1 swp48 ombdcsl1 swp48
+connect libdcsl1 swp5 kdc-n7k-1 swp1
+connect ombdcsl1 swp5 kdc-n7k-1 swp2
+connect libdcsl1 swp7 kdc-core-1 swp1
+connect ombdcsl1 swp7 kdc-core-1 swp2
+connect libdcsl1 swp9 kdc-mgmt-net-1 swp1
+connect ombdcsl1 swp9 kdc-mgmt-net-1 swp2
+connect libdcsl1 swp1 SRDH4IT2R26DSLX1 swp1
+connect ombdcsl1 swp1 SRDH4IT2R09DSLX1 swp1
+connect SRDH4IT2R26DSLX1 swp51 SRDH4IT2R09DSLX1 swp51
+connect SRDH4IT2R26DSLX1 swp52 SRDH4IT2R09DSLX1 swp52
+connect SRDH4IT2R26DSLX1 swp49 SRDH4IT2R26DSPC1 swp1
+connect SRDH4IT2R09DSLX1 swp49 SRDH4IT2R26DSPC1 swp2
+connect SRDH4IT2R26DSLX1 swp50 SRDH4IT2R09DSPC1 swp1
+connect SRDH4IT2R09DSLX1 swp50 SRDH4IT2R09DSPC1 swp2
+connect SRDH4IT2R20DLFX1 swp49 SRDH4IT2R26DSPC1 swp5
+connect SRDH4IT2R20DLFX1 swp50 SRDH4IT2R09DSPC1 swp5
+connect SRDH4IT2R20DLFX2 swp49 SRDH4IT2R26DSPC1 swp6
+connect SRDH4IT2R20DLFX2 swp50 SRDH4IT2R09DSPC1 swp6
+connect SRDH4IT2R20DLFX1 swp51 SRDH4IT2R20DLFX2 swp51
+connect SRDH4IT2R20DLFX1 swp52 SRDH4IT2R20DLFX2 swp52
+connect SRDH4IT2R20DLFX1 swp53s0 SRDH4IT2R20DLFG1 swp49
+connect SRDH4IT2R20DLFX2 swp53s0 SRDH4IT2R20DLFG1 swp50
+connect SRDH4IT2R24DLFX1 swp49 SRDH4IT2R26DSPC1 swp7
+connect SRDH4IT2R24DLFX1 swp50 SRDH4IT2R09DSPC1 swp7
+connect SRDH4IT2R24DLFX2 swp49 SRDH4IT2R26DSPC1 swp8
+connect SRDH4IT2R24DLFX2 swp50 SRDH4IT2R09DSPC1 swp8
+connect SRDH4IT2R24DLFX1 swp51 SRDH4IT2R24DLFX2 swp51
+connect SRDH4IT2R24DLFX1 swp52 SRDH4IT2R24DLFX2 swp52
+connect SRDH4IT2R24DLFX1 swp53s0 SRDH4IT2R24DLFG1 swp49
+connect SRDH4IT2R24DLFX2 swp53s0 SRDH4IT2R24DLFG1 swp50
+connect SRDH4IT1R20DLFG1 swp49 SRDH4IT2R26DSLX1 swp6
+connect SRDH4IT1R20DLFG1 swp50 SRDH4IT2R09DSLX1 swp6
+connect SRDH4IT2R26MSPX1 swp45 SRDH4IT2R26DSLX1 swp2
+connect SRDH4IT2R09MSPX1 swp45 SRDH4IT2R26DSLX1 swp3
+connect SRDH4IT2R26MSPX1 swp46 SRDH4IT2R09DSLX1 swp2
+connect SRDH4IT2R09MSPX1 swp46 SRDH4IT2R09DSLX1 swp3
+connect SRDH4IT2R26MSPX1 swp47 SRDH4IT2R09MSPX1 swp47
+connect SRDH4IT2R26MSPX1 swp48 SRDH4IT2R09MSPX1 swp48 
+connect SRDH4IT2R26MSPX1 swp1 SRDH4IT2R20MLFG1 swp49
+connect SRDH4IT2R09MSPX1 swp1 SRDH4IT2R20MLFG1 swp50
+
