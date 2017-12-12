@@ -31,7 +31,6 @@ service oob-mgmt-server mesos eth0 5050 TCP public
 service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 
-network oob-mgmt-server eth1 10.255.7.254 255.255.255.0
 network oob-mgmt-server eth1 10.255.7.1 255.255.255.0
 network kdc-n7k-1 eth0 10.255.7.231 255.255.255.0
 network kdc-core-1 eth0 10.255.7.233 255.255.255.0
