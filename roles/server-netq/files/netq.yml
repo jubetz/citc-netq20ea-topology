@@ -1,7 +1,7 @@
 # See /usr/share/doc/netq/examples for full configuration file
 backend:
   port: 6379
-  server: 10.1.3.11
+  server: 192.168.0.254
   vrf: default
 user-commands:
 - commands:
