@@ -1,15 +1,37 @@
 
 vm oob-mgmt-server netq-1.4.0 2 10 40
-vm leaf01 cumulus-vx-3.7.2 1 2 2
-vm leaf02 cumulus-vx-3.7.2 1 2 2
-vm leaf03 cumulus-vx-3.7.2 1 2 2
-vm leaf04 cumulus-vx-3.7.2 1 2 2
-vm spine01 cumulus-vx-3.7.2 1 2 2
-vm spine02 cumulus-vx-3.7.2 1 2 2
-vm server01 ubuntu-16.04 2 4 4
-vm server02 ubuntu-16.04 2 4 4
-vm server03 ubuntu-16.04 2 4 4
-vm server04 ubuntu-16.04 2 4 4
+vm netq1 netq-1.3.0 2 10 40
+
+vm UDCLAYN00001 cumulus-vx-3.6.2 1 2 2
+vm UDCLAYN00002 cumulus-vx-3.6.2 1 2 2
+vm SDCLAYN00001 cumulus-vx-3.6.2 1 2 2
+vm SDCLAYN00002 cumulus-vx-3.6.2 1 2 2
+vm LDCLAYN00005 cumulus-vx-3.6.2 1 2 2
+vm LDCLAYN00006 cumulus-vx-3.6.2 1 2 2
+vm LDCLAYN00007 cumulus-vx-3.6.2 1 2 2
+vm LDCLAYN00008 cumulus-vx-3.6.2 1 2 2
+vm BDCLAYN00001 cumulus-vx-3.6.2 1 2 2
+vm BDCLAYN00002 cumulus-vx-3.6.2 1 2 2
+vm RDCLAYN00001 cumulus-vx-3.6.2 1 2 2
+vm RDCLAYN00002 cumulus-vx-3.6.2 1 2 2
+
+vm CDCLAYN00010  ubuntu-16.04 2 4 4
+vm XDCLAYN00009 ubuntu-16.04 2 4 4
+vm YDCLAYN00005 ubuntu-16.04 2 4 4
+vm CDCLAYN00014 ubuntu-16.04 2 4 4
+vm XDCLAYN00011 ubuntu-16.04 2 4 4
+vm YDCLAYN00011 ubuntu-16.04 2 4 4
+
+vm fake-spine3 cumulus-vx-3.6.2 1 2 2
+vm fake-spine4 cumulus-vx-3.6.2 1 2 2
+vm fake-server3 ubuntu-16.04 2 4 4
+vm fake-server4 ubuntu-16.04 2 4 4
+vm fake-future-spine cumulus-vx-3.6.2 1 2 2
+vm fake-server6 ubuntu-16.04 2 4 4
+vm fake-server7 ubuntu-16.04 2 4 4
+vm fake-server8 ubuntu-16.04 2 4 4
+vm fake-server9 ubuntu-16.04 2 4 4
+
 
 network oob-mgmt-server eth0 10.255.0.1 255.255.0.0 public
 service oob-mgmt-server ssh eth0 22 TCP public
