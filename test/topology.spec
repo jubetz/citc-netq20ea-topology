@@ -48,35 +48,35 @@ service oob-mgmt-server mesosapp eth0 8088 TCP public
 
 network oob-mgmt-server eth1 192.168.0.1 255.255.0.0
 network netq1 eth0 192.168.0.2 255.255.0.0
-network UDCLAYN00001 eth0 192.168.0.11
-network UDCLAYN00002 eth0 192.168.0.12
-network SDCLAYN00001 eth0 192.168.0.21
-network SDCLAYN00002 eth0 192.168.0.22
-network LDCLAYN00005 eth0 192.168.0.35
-network LDCLAYN00006 eth0 192.168.0.36
-network LDCLAYN00007 eth0  192.168.0.37
-network LDCLAYN00008 eth0 192.168.0.38
-network BDCLAYN00001 eth0 192.168.0.41
-network BDCLAYN00002 eth0 192.168.0.42
-network RDCLAYN00001 eth0 192.168.0.51
-network RDCLAYN00002 eth0 192.168.0.52
+network UDCLAYN00001 eth0 192.168.0.11 255.255.0.0
+network UDCLAYN00002 eth0 192.168.0.12 255.255.0.0
+network SDCLAYN00001 eth0 192.168.0.21 255.255.0.0
+network SDCLAYN00002 eth0 192.168.0.22 255.255.0.0
+network LDCLAYN00005 eth0 192.168.0.35 255.255.0.0
+network LDCLAYN00006 eth0 192.168.0.36 255.255.0.0
+network LDCLAYN00007 eth0  192.168.0.37 255.255.0.0
+network LDCLAYN00008 eth0 192.168.0.38 255.255.0.0
+network BDCLAYN00001 eth0 192.168.0.41 255.255.0.0
+network BDCLAYN00002 eth0 192.168.0.42 255.255.0.0
+network RDCLAYN00001 eth0 192.168.0.51 255.255.0.0
+network RDCLAYN00002 eth0 192.168.0.52 255.255.0.0
 
-network CDCLAYN00010 eth0 192.168.0.61
-network XDCLAYN00009 eth0 192.168.0.62
-network YDCLAYN00005 eth0 192.168.0.63
-network CDCLAYN00014 eth0 192.168.0.64
-network XDCLAYN00011 eth0 192.168.0.65
-network YDCLAYN00011 eth0 192.168.0.66
+network CDCLAYN00010 eth0 192.168.0.61 255.255.0.0
+network XDCLAYN00009 eth0 192.168.0.62 255.255.0.0
+network YDCLAYN00005 eth0 192.168.0.63 255.255.0.0
+network CDCLAYN00014 eth0 192.168.0.64 255.255.0.0
+network XDCLAYN00011 eth0 192.168.0.65 255.255.0.0
+network YDCLAYN00011 eth0 192.168.0.66 255.255.0.0
 
-network fake-spine3 eth0 192.168.0.71
-network fake-spine4 eth0 192.168.0.72
-network fake-server3 eth0  192.168.0.73
-network fake-server4 eth0 192.168.0.74
-network fake-future-spine eth0 192.168.0.75
-network fake-server6 eth0 192.168.0.76
-network fake-server7 eth0 192.168.0.77
-network fake-server8 eth0 192.168.0.78
-network fake-server9 eth0 192.168.0.79
+network fake-spine3 eth0 192.168.0.71 255.255.0.0
+network fake-spine4 eth0 192.168.0.72 255.255.0.0
+network fake-server3 eth0  192.168.0.73 255.255.0.0
+network fake-server4 eth0 192.168.0.74 255.255.0.0
+network fake-future-spine eth0 192.168.0.75 255.255.0.0
+network fake-server6 eth0 192.168.0.76 255.255.0.0
+network fake-server7 eth0 192.168.0.77 255.255.0.0
+network fake-server8 eth0 192.168.0.78 255.255.0.0
+network fake-server9 eth0 192.168.0.79 255.255.0.0
 
 autoconfig oob-mgmt-server
 
