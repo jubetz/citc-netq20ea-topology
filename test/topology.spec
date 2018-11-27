@@ -46,17 +46,37 @@ service oob-mgmt-server mesos eth0 5050 TCP public
 service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 
-network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
-network leaf01 eth0 192.168.0.11 255.255.0.0
-network leaf02 eth0 192.168.0.12 255.255.0.0
-network leaf03 eth0 192.168.0.13 255.255.0.0
-network leaf04 eth0 192.168.0.14 255.255.0.0
-network spine01 eth0 192.168.0.21 255.255.0.0
-network spine02 eth0 192.168.0.22 255.255.0.0
-network server01 eth0 192.168.0.31 255.255.0.0
-network server02 eth0 192.168.0.32 255.255.0.0
-network server03 eth0 192.168.0.33 255.255.0.0
-network server04 eth0 192.168.0.34 255.255.0.0
+network oob-mgmt-server eth1 192.168.0.1 255.255.0.0
+network netq1 eth0 192.168.0.2 255.255.0.0
+network UDCLAYN00001 eth0 192.168.0.11
+network UDCLAYN00002 eth0 192.168.0.12
+network SDCLAYN00001 eth0 192.168.0.21
+network SDCLAYN00002 eth0 192.168.0.22
+network LDCLAYN00005 eth0 192.168.0.35
+network LDCLAYN00006 eth0 192.168.0.36
+network LDCLAYN00007 eth0  192.168.0.37
+network LDCLAYN00008 eth0 192.168.0.38
+network BDCLAYN00001 eth0 192.168.0.41
+network BDCLAYN00002 eth0 192.168.0.42
+network RDCLAYN00001 eth0 192.168.0.51
+network RDCLAYN00002 eth0 192.168.0.52
+
+network CDCLAYN00010 eth0 192.168.0.61
+network XDCLAYN00009 eth0 192.168.0.62
+network YDCLAYN00005 eth0 192.168.0.63
+network CDCLAYN00014 eth0 192.168.0.64
+network XDCLAYN00011 eth0 192.168.0.65
+network YDCLAYN00011 eth0 192.168.0.66
+
+network fake-spine3 eth0 192.168.0.71
+network fake-spine4 eth0 192.168.0.72
+network fake-server3 eth0  192.168.0.73
+network fake-server4 eth0 192.168.0.74
+network fake-future-spine eth0 192.168.0.75
+network fake-server6 eth0 192.168.0.76
+network fake-server7 eth0 192.168.0.77
+network fake-server8 eth0 192.168.0.78
+network fake-server9 eth0 192.168.0.79
 
 autoconfig oob-mgmt-server
 
