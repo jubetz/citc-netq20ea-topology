@@ -23,6 +23,10 @@ service oob-mgmt-server netq eth0 9000 TCP public
 service oob-mgmt-server mesos eth0 5050 TCP public
 service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
+service oob-mgmt-server opta eth0 31980 TCP public
+service oob-mgmt-server apigateway eth0 32708 TCP public
+service oob-mgmt-server gui eth0 32666 TCP public
+service oob-mgmt-server healthdashboard eth0 32760 TCP public
 
 network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
 network leaf01 eth0 192.168.0.11 255.255.0.0
