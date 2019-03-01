@@ -17,7 +17,6 @@ service oob-mgmt-server http eth0 80 TCP public
 service oob-mgmt-server https eth0 443 TCP public
 service oob-mgmt-server http2 eth0 1337 TCP public
 service oob-mgmt-server grafana eth0 3000 TCP public
-service oob-mgmt-server netqgui eth0 5000 TCP public
 service oob-mgmt-server novnc eth0 6080 TCP public
 service oob-mgmt-server netq eth0 9000 TCP public
 service oob-mgmt-server mesos eth0 5050 TCP public
@@ -25,7 +24,7 @@ service oob-mgmt-server marathon eth0 8080 TCP public
 service oob-mgmt-server mesosapp eth0 8088 TCP public
 service oob-mgmt-server opta eth0 31980 TCP public
 service oob-mgmt-server apigateway eth0 32708 TCP public
-service oob-mgmt-server gui eth0 32666 TCP public
+service oob-mgmt-server netqgui eth0 32666 TCP public
 service oob-mgmt-server healthdashboard eth0 32760 TCP public
 
 network oob-mgmt-server eth1 192.168.0.254 255.255.0.0
