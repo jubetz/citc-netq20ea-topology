@@ -40,6 +40,8 @@ network server02 eth0 192.168.0.32 255.255.0.0
 network server03 eth0 192.168.0.33 255.255.0.0
 network server04 eth0 192.168.0.34 255.255.0.0
 
+autoconfig oob-mgmt-server
+
  connect leaf01 swp51 spine01 swp1
  connect leaf02 swp51 spine01 swp2
  connect leaf03 swp51 spine01 swp3
