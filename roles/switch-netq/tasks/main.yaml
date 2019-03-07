@@ -13,6 +13,10 @@
 - service:
     name: netqd
     enabled: yes
+    state: restarted   
+- service:
+    name: netqd-agent
+    enabled: yes
     state: restarted
 - copy:
     src: files/netq.yml
@@ -23,3 +27,5 @@
 - pause:
     seconds: 5
 - shell: netq config restart agent
+- shell: netq config restart cli
+
