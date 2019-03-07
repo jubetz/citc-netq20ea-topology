@@ -19,7 +19,7 @@
     enabled: yes
     state: restarted
 - service:
-    name: netqd-agent
+    name: netq-agent
     enabled: yes
     state: restarted
 - copy:
