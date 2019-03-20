@@ -11,4 +11,4 @@ cd ansible-push-keys; cat /etc/dhcp/dhcpd.hosts | grep 'host .* {' | cut -d " " 
 cd ansible-push-keys; ansible-playbook push-keys.yml --extra-vars 'ansible_ssh_pass=CumulusLinux!' --extra-vars 'ansible_become_pass=CumulusLinux!'
 rm -rf ansible-push-keys
 ansible-playbook setup.yaml
-git clone -b netq2-ea-evpn https://github.com/CumulusNetworks/cldemo-netq/ evpn
+git clone -b netq2-ea-evpn https://github.com/CumulusNetworks/cldemo-netq/ ~/evpn
