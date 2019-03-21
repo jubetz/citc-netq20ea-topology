@@ -10,14 +10,6 @@
 - service:
     name: rsyslog
     state: restarted
-- service:
-    name: netqd
-    enabled: yes
-    state: restarted   
-- service:
-    name: netq-agent
-    enabled: yes
-    state: restarted
 - copy:
     src: files/netq.yml
     dest: "/etc/netq/netq.yml"
