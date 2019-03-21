@@ -7,15 +7,15 @@
     name: cumulus-netq
     update_cache: yes
     state: latest
-- service:
-    name: rsyslog
-    state: restarted
 - copy:
     src: files/netq.yml
     dest: "/etc/netq/netq.yml"
     owner: root
     group: root
     mode: "u=rw,o=r,g=r"
+- service:
+    name: rsyslog
+    state: restarted
 - pause:
     seconds: 5
 - shell: netq config restart agent
