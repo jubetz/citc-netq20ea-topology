@@ -12,5 +12,3 @@ cd ansible-push-keys; ansible-playbook push-keys.yml --extra-vars 'ansible_ssh_p
 rm -rf ansible-push-keys
 ansible-playbook setup.yaml
 git clone -b netq2-ea-evpn https://github.com/CumulusNetworks/cldemo-netq/ ~/evpn
-sudo systemctl enable cts-kubectl-config.service
-sudo systemctl start cts-kubectl-config.service
